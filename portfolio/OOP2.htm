@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Sophia's Portfolio: Unit 4 (Object Oriented Programming: Polymorphism) </title>
+<style>
+body 
+{
+  background-image: url("rainforest.jpg");
+}
+h1 
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 450%;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+h3
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 125%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+h4
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+div 
+{
+  width: 1165px;
+  border: 5px solid white;
+  border-color : #145A32;
+  padding: 25px;
+  margin: 20px;
+  background-color:#1D8348;
+}
+p
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+pre
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+.button 
+{
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 18.5px;
+	text-decoration: none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.button:hover 
+{
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.button:active 
+{
+	position:relative;
+	top:1px;
+}
+box 
+{
+  width: 600px;
+  background-color:#D1F2EB;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Unit 4: Object Oriented Programming (Polymorphism) </h1>
+<box>
+<a href="index.htm" class="button">Homepage</a>
+<a href="AboutMe.htm" class="button">About Me</a>
+<a href="OOP.htm" class="button">Unit 1: OOP (Part 1)</a>
+<a href="Arrays.htm" class="button">Unit 2: Arrays and ArrayLists</a>
+<a href="SortingSearching.htm" class="button">Unit 3: Sorting and Searching</a>
+<a href="Recursion.htm" class="button">Unit 4: Recursion</a>
+</box>
+<box>
+<a href="OOP2.htm" class="button">Unit 5: OOP (Part 2)</a>
+<a href="PastProjects.htm" class="button">Past Projects</a>
+<a href="FutureProjects.htm" class="button">Future Projects</a>
+<a href="Bibliography.htm" class="button">Bibliography</a>
+</box>
+<div>
+<h3>Polymorphism</h3>
+<p>
+Polymorphism is the ability of an object to change into different forms. The object has the potential to run a different overridded version of a method depending on its type of object. Polymorphism is beneficial because it allows for simplification of code. Instead of writing code to decide what method to run, the computer decides during run-time. 
+</p>
+<img src="polymorphism.PNG" alt="Polymorphism">
+<pre>
+<code>
+Example: 
+/*Bird superclass*/
+public class Bird 
+{
+	/*constructor and other methods not shown*/
+	
+/*sing method*/
+	public void sing()
+	{
+		System.out.println (“tweet”);
+}
+}
+
+/*Hawk subclass*/
+public class Hawk extends Bird
+{
+	/*constructor and other methods not shown*/
+	
+/*sing method*/
+@Override
+public void sing()
+{
+	System.out.println (“keear”);
+}
+}
+
+public class Test 
+{
+	public static void main (String[] args)
+	{
+		//upcasting (constructing birdy as a Hawk but labelling it a Bird) 
+		Bird birdy = new Hawk (); 
+		birdy.sing(); //prints out “keear”
+}
+}
+</code>
+</pre>
+<p>
+In this example, the Bird superclass provides the sing() method, which prints out “tweet”. The Hawk subclass extends the Bird superclass and overrides the sing() method with a sing() method of its own, with different implementation. The Hawk sing() method prints out “keear”. In the driver class, a new Hawk object is made but is upcasted to a Bird. Birdy is labelled as a Bird (the superclass) but it is still a Hawk object (the subclass). When we call the sing() method for birdy, the computer will recognize at run time that birdy is a Hawk object and will execute the overridded sing() method in Hawk rather than the sing() method in Bird. This is called dynamic or run-time binding. 
+</p>
+<h3>Dynamic vs Static Binding</h3>
+<p>Dynamic binding is when a program is coded so that an overridden method will be called depending on the object’s type. The overridden method called will depend on what occurs during the program’s execution, so dynamic binding occurs while the program is running. Dynamic binding is usually used when there are overrided versions of a method within a class hierarchy tree.  
+</p>
+<p>
+Static binding is when we overload methods so that a method will be called depending on which parameter list the object corresponds with. The code is set into the program and cannot be changed during runtime, so static binding occurs when the program is compiled. A method will always be called because the object will correspond with one of the method parameter lists.
+</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Sophia's Portfolio: Unit 1 (Object Oriented Programming) </title>
+<style>
+body 
+{
+  background-image: url("rainforest.jpg");
+}
+h1 
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 450%;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+h3
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 125%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+h4
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+div 
+{
+  width: 1165px;
+  border: 5px solid white;
+  border-color : #145A32;
+  padding: 25px;
+  margin: 20px;
+  background-color:#1D8348;
+}
+p
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+pre
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+.button 
+{
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 18.5px;
+	text-decoration: none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.button:hover 
+{
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.button:active 
+{
+	position:relative;
+	top:1px;
+}
+box 
+{
+  width: 600px;
+  background-color:#D1F2EB;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Unit 1: Object Oriented Programming</h1>
+<box>
+<a href="index.htm" class="button">Homepage</a>
+<a href="AboutMe.htm" class="button">About Me</a>
+<a href="OOP.htm" class="button">Unit 1: OOP (Part 1)</a>
+<a href="Arrays.htm" class="button">Unit 2: Arrays and ArrayLists</a>
+<a href="SortingSearching.htm" class="button">Unit 3: Sorting and Searching</a>
+<a href="Recursion.htm" class="button">Unit 4: Recursion</a>
+</box>
+<box>
+<a href="OOP2.htm" class="button">Unit 5: OOP (Part 2)</a>
+<a href="PastProjects.htm" class="button">Past Projects</a>
+<a href="FutureProjects.htm" class="button">Future Projects</a>
+<a href="Bibliography.htm" class="button">Bibliography</a>
+</box>
+<div>
+<h3>What Is Object-Oriented Programming?</h3>
+<p>Object oriented programming is a type of programming where we create "objects" that represent real life objects, that have states (attributes) and behaviours (methods). Java is mainly centered around object oriented programming.</p>
+<h3>Classes and Objects</h3>
+<p>
+An object in real life is anything that we can see and touch. Objects have identities (what they are) properties (such as colour, size) and behaviours (such as jump, sleep). Objects in programming languages mimic real objects and have properties (instance variables/fields) and behaviours (methods/things that it does or is done to it). They are also allocated space in memory that is their “identity”. That space is only for that specific object. A class is a template that outlines an object’s attributes and methods. Usually we create one class per Java file. We create a class by declaring its modifier (usually public), the keyword class, and the name of the class (the identifier). 
+</p>
+<p> <pre>
+<code>
+Example: 
+public class Cat //creates a new class called Cat  
+{
+	//code 
+}
+</code>
+</pre><p>
+<p>
+In this example, we create a new class called Cat. 
+We can create, or instantiate, many objects from the class and name each object something. We can then call its methods to make it do different things or change its attributes. However, all of these objects are still the same object. We can create objects by declaring the class name, followed by an object name, followed by an equals sign and the keyword “new”, and finally the name of the class/constructor and its parameter list. 
+<p>
+<p><pre>
+<code>
+Example: 
+public static void main (String[]args) //this is the main method 
+{
+	Cat arnold = new Cat (); //constructs a new Cat object named arnold 
+}
+</code>
+</pre><p>
+<p>In this example, we are using the Cat class to make a Cat object and name it arnold. </p>
+<h4>Encapsulation</h4>
+<p>Encapsulation is the process of protecting program information by declaring fields as private, and only allowing them to be accessed or changed through accessor and mutator methods. This effectively prevents the program’s data from being seen or accidentally changed from outside the class.</p>
+<h3>Variables and Variable Scope</h3>
+<p>Variables are named containers that hold a value. We declare variables by declaring the data type of the variable (what type of value the variable holds, such as integer, double, char, boolean) and the identifier of the variable (what name we will use to access the value). 
+</p>
+<h4>Example Primitive Data Types</h4>
+<p><pre>
+<code>
+int x = 0; //integer 
+double y = 5.7; //floating point decimal number
+char character = ‘a’; //character 
+boolean trueOrFalse = true; //true or false 
+</code>
+</pre></p>
+<h4>Example Non-Primitive Data Types</h4>
+<p><pre>
+<code>
+String z = “Hello”; //collection of characters 
+String[] a = new String[10]; //array (collection) of Strings
+int[]b = new int[5]; //array (collection) of integers  
+</code>
+</pre></p>
+<p>Global variables are variables declared inside the class but outside all class methods. We do not need to initialize the values of global variables because Java assigns it default values. Local variables are any variables declared inside methods or sectioned code (code inside curly braces {}). We need to initialize them (give them default values) otherwise an error will occur. 
+</p>
+<p><pre>
+<code>
+Example: 
+public class Numbers
+{
+//global variables 
+private int num1;
+private int num2;
+public int doSomething () //doSomething method 
+{
+	int number = 5; //local variable 
+	return number + num1 + num2; 
+}
+}
+</code>
+</pre><p>
+<p>Variable scope is the range of the program where certain variables are “alive” or able to be used. Local variables (variables that are declared within a method or segmented code such as loops or try-catch statements) have a variable scope within the method/segmented code and cannot be used outside of it. Global variables can be used anywhere within the class or even from other classes if they are public. </p>
+<h3>Fields and Methods</h3>
+<p>Instance variables, also known as fields, are global variables that are attributes of the objects created from the class. They are usually private and are never static. 
+</p>
+<p><pre>
+<code>
+Example: 
+public class Cat 
+{
+	//global instance variables 
+	private int numSpots; 
+	private String furColour; 
+}
+</code>
+</pre><p>
+<p>An accessor method is a method that accesses an object’s instance variable/field. Accessor method names usually begin with “get” followed by the value that the method is getting. Since the fields of a class are usually encapsulated, we need accessor methods in order to use or display their values. 
+</p>
+<p><pre>
+<code>
+Example: 
+public int getNumberOfSpots ()
+{
+ return numSpots; 
+}
+</code>
+</pre><p>
+<p>This accessor method would get the number of cats and return the value. </p>
+<p>
+A mutator method is a method that changes an object’s instance variable. Mutator methods names usually begin with “set” followed by the value that the method is setting. Since the fields of a class are usually encapsulated, we need mutator methods in order to change their values. This makes it harder for those values to be corrupted because the mutator method can error trap input before changing the value.  
+</p>
+<p><pre>
+<code>
+Example: 
+public void setNumberOfSpots (int newNum)
+{
+	if (newNum > 0)
+		numSpots = newNum;
+}
+</code>
+</pre><p>
+<p>This mutator method would set the number of cats to a value, as long as the value is greater than 0.  
+</p>
+<h4>Dot Notation</h4>
+<p>Dot notation is the technique used to call (also known as invoke) a field or method of a certain object. Each object created from a class has its own copy of the fields and methods. 
+Each object instantiated from a class can call a method of that class. In order to do this, we must write the object’s name followed by a dot and the method name and brackets. Usually we do not use dot notation for fields because of encapsulation, but you would write the object’s name followed by a dot and the field name. 
+</p>
+<p><pre>
+<code>
+Example: 
+public static void main (String[]args)
+{
+	Cat arnold = new Cat (); //constructs a new Cat object named arnold 
+	arnold.sleep(); //calls the sleep method for the Cat object arnold  
+}
+</code>  
+</pre><p>
+<p>In this example, after creating a new Cat object named arnold, we call the sleep method for arnold using dot notation. 
+</p>
+<h3>Returning</h3>
+<p>Methods can return, or give back, a value. Usually this happens when the method performs operations to get a value and gives it back to wherever the method is called. We declare that a method will return something by typing the data type right before the name of the method. The method must then return a value of that data type using the return keyword. If a method does not return anything, we declare it as void.
+</p>
+<p><pre>
+<code>
+Example: 
+public void sleep () //void method 
+{
+	//implementation
+}
+</code>
+This method doesn’t return anything. 
+<code>
+public int getNumber() //returning method 
+{
+	return 5; //returns 5 
+}
+</code>
+This method returns an integer (5).
+<code>
+public static void main (String[]args) //main method 
+{
+	Cat arnold = new Cat (); //new Cat object 
+	System.out.println (arnold.getNumber()); //returns 5 and prints it out
+}
+</code>
+This will print out 5 to the screen. 
+</pre><p>
+<h3>Modifiers</h3>
+<p>Modifiers are keywords that we use to change the access of a variable, class, or method. Public means that it can be accessed anywhere from other classes (as long as it is not declared inside  a method). Private means that it can be accessed only from inside the same class (besides the main method). Protected means that it can be accessed from any other class of the same package. 
+</p>
+<p><pre>
+<code>
+Example: 
+public class Cat //classes are usually public  
+{
+	private int numSpots; //private instance variable 
+	public void sleep() //methods are usually public
+	{
+		//implementation
+}
+}
+</code>
+</pre><p>
+<h3>Parameters</h3>
+<p>Parameters are local variables declared in a method header, within the brackets after the method name. They are used within the method and are destroyed after the method ends. Parameters are useful for when we want to pass in values for the method to use. 
+</p>
+<p><pre>
+<code>
+Example: 
+public int add (int num1, int num2) //parameter list
+{
+	return num1 + num2; 
+} 
+</code>
+</pre><p>
+<p>A formal parameter is a parameter that a method allows to be passed in, in the brackets of a method header. We pass values into formal parameters by calling the method name with values inside of the brackets. An actual parameter (also known as an argument) is a parameter that we use when we call a method and want to pass in values. The values that we put inside the brackets when we call those methods are the actual parameters. 
+</p>
+<p>An implicit parameter is a parameter in a method header that refers to the object that the method belongs to. It is hidden, so we do not see it. We pass it into the method parameters by typing in the object name before the dot and method name. An explicit parameter is a value that we pass into method header parameters. We pass these values by typing them in the brackets when we call methods.
+</p>
+<p><pre>
+<code>
+Example:  
+public static void main (String[]args) //main method 
+{
+	Cat arnold = new Cat (); //new Cat object 
+	arnold.eat (“meat”); //arnold is the implicit parameter and “meat” is the explicit parameter
+}
+</code>
+</pre><p>
+<p>Passing by value is when we pass a value into the parameters of a method header so that we can use those values in the method. A copy of the value is made to the method. If we change the value inside of the method, the original value is unchanged because we are copying the information. 
+</p>
+<p>Passing by reference is when we pass an object reference into a method header parameter to use it in the method. This occurs when we pass arrays, since arrays are objects, or any object. This means that if we change the values (fields) of the object in the method, the original value will change as well. However, we cannot change the reference value of the object because the value is copied into the method and destroyed when the method ends. 
+</p>
+<p><pre>
+<code>
+Example: 
+public void doSomething (int num1, int num2) //passing by value 
+{
+	num1 = 6; 
+	num2 = 8;
+}
+</code>
+In this method, the original numbers would not be changed, just the copies of the numbers. 
+<code>
+public void doAnotherThing (Fraction firstNum, Fraction secondNum) //passing by reference 
+{
+	firstNum.num = 7; 
+	secondNum.denom = 8;
+}
+</code> 
+In this method, the original fields of the Fraction objects would change. 
+</pre><p>
+<h3>Overloaded Methods</h3>
+<p>
+Overloaded methods are multiple methods with the same name but with different signatures. The signatures are the parameter list: the number of parameters, the type of parameters, and the order of the parameters. The return type is not included in the signature. Overloaded methods are useful for performing similar functions. 
+</p>
+<p><pre>
+<code>
+Example: 
+public void calculate (int num1, int num2)
+{//implementation}
+public void calculate (int num1, double num2)
+{//implementation}
+public void calculate (double num1, double num2)
+{//implementation}
+</code>
+</pre><p>
+<h3>Constructors</h3>
+<p>A constructor is a segmented block of code in a class that allocates space in memory for objects of the class and sets default values for its fields. It is declared by using the keyword public and the class name followed by brackets. Constructors do not have a return type. Constructors usually have parameters to set the fields to default values. A class can have more than one constructor with different signatures. We should always provide a no-parameter default constructor. If we don’t, Java will provide one for us (but we shouldn’t do this). 
+</p>
+<p><pre>
+<code>
+Example: 
+public Cat () //default constructor 
+{
+	//initializes fields 
+	numSpots = 0; 
+	furColour = “brown”;
+}
+public Cat (int spots, String fur) //second constructor with parameters 
+{
+	//initializes fields 
+	numSpots = spots; 
+	furColour = fur; 
+}
+public static void main (String[]args) //main method 
+{
+	//creates Cat objects by calling constructors 
+	Cat arnold = new Cat (); //calls default constructor 
+	Cat jessie = new Cat (5, “white”); //calls second constructor and passes values 
+}
+</code> 
+</pre><p>
+<p>In this example, the Cat class has two constructors that each set default field values. The main method creates two Cat objects. The first object calls the default constructor, which sets default values, and the second object calls the second constructor with parameters, which sets the field values to those specified values. 
+</p>
+<h3>This</h3>
+<p><pre>
+This is a reserved word in Java. It refers to the current object of the class. This has many uses in Java. 
+this refers to the current object of the class.
+this() refers to the default constructor, and we can put in parameters to match certain constructors. 
+this.field refers to the field of the object. 
+this.method refers to the method of the object. 
+</pre><p>
+<h3>Main Methods</h3>
+<p>Main methods are special methods that control the class objects and what they do. 
+It is declared with the line: public static void main (String[]args) 
+</p>
+<p>We always create objects of the class inside the main method because it is static  Since it is part of the class, not of an object like instance methods, we need to create the objects in there first. 
+Main methods are usually inside driver classes, which are separate classes with a main method that controls the program flow.  
+</p>
+<p><pre>
+<code>
+Example: 
+public static void main (String[]args) //main method
+{
+	Car honda = new Car (); //makes a new Car object called honda 
+	honda.drive(20); //drives the car 
+	honda.refill(); //refills the car 
+	honda.paint(“red”); //paints the car 
+}
+</code>
+In this example a main method is created. A Car object is created inside and a few of its methods are called. 
+</pre><p>
+<h3>Static vs Non-Static</h3>
+<p>The static keyword means that something belongs to the class instead of to the object of the class. Instance methods or fields are non-static, and they belong to each object instead of the class. 
+</p>
+<p>Static fields are shared between all of the objects of the class. Changing the field from one object will change it for all of the objects. Instance fields are individual (copied) for each object of the class. Changing the field for one object will not affect other objects. Static fields are great for keeping track of statistics, such as counting the number of objects. 
+</p>
+<p><pre>
+<code>
+Example:
+public class Cat
+{
+	private static int numOfCats;  
+	public Cat ()
+	{
+		numOfCats++; 
+	}
+}
+</code>
+In this example a static counter is used to count the number of Cat objects.   
+</pre><p>
+<p>Static methods are methods that belong to the class instead of to individual objects of the class. It does not need any object in order to run. Static methods are run before any instance methods because objects are made inside of static methods. Static methods cannot access instance fields or methods because no object has been created yet. Instance methods can access both static and instance fields or methods. 
+</p>
+<p><pre>
+<code>
+Example: 
+static int num1; 
+int num2; 
+public static void statMethod ()
+{
+	num1++; //would not cause an error 
+	num2++; //would cause an error! 
+}
+public void instMethod ()
+{
+	num1++; //would not cause an error 
+	num2++; //would not cause an error 
+}
+</code>
+</pre><p>
+<p>Static fields and methods are called by using the class name and dot notation. Instance variables and methods are called by using the object name and dot notation. 
+</p>
+<h3>Inheritance</h3>
+<p>Inheritance is when we make a class inherit, or gain, all of the public attributes and methods of another class. The class that inherits is called the subclass (also known as the child class, the derived class, or the descendant) and the class that is inherited from is called the superclass (also known as the parent class, the ancestor, or the base class). A copy of the data from the superclass is made into the subclass. The subclass can provide further specific methods and fields on top of the inherited data. The different levels of inheritance between classes is called hierarchy. We can show this using a Class Hierarchy Tree. The subclass has a Is-A relationship to the superclass. When a class implements an interface it has a Has-A relationship to the class. When we call a method of a class, Java will automatically run the first accessible version of the method (the lowest on the hierarchy) of the object. </p>
+<img src="animalTree.png" alt="Animal Class Hierarchy Tree">
+<p>
+When you call the superclass, you call it using the word super. To call the superclass constructor, we use super(). To call a superclass method or public field, we use super.method() or super.field.   
+In a subclass constructor, we must always call the superclass constructor using the keyword super() and it must be the very first line of code. 
+</p>
+<p><pre>
+<code>
+Example: 
+public class Animal //superclass 
+{
+	private int energy; 
+	private int healthiness; 
+	private int cleanliness;
+	private int age; 
+
+public Animal ()
+{
+	energy = 100; 
+	healthiness = 100; 
+	cleanliness = 100;
+	age = 0; 
+}	
+
+	public String makeSound()
+	{//implementation}
+	public void eat()
+	{//implementation}
+	public void sleep()
+	{//implementation}
+}
+public class Chicken extends Animal 
+{
+	private int featherColour; 
+
+	public Chicken ()
+	{
+		super ();
+		featherColour= white;
+	}
+public String makeSound()
+{
+		return “bok bok”;
+}
+}
+</code>
+</pre><p>
+In this example, the class chicken (subclass) extends the class Animal (superclass). It overrides the makeSound() method and provides an extra attribute. 
+<h4>Method Overriding</h4>
+<p>A subclass can inherit a public method of a superclass but override it to change it to its needs. We can override it by redefining it again and providing implementation. 
+</p>
+<pre>
+<code>
+Example:
+public class Singer 
+{
+	public void sing()
+	{
+		//implementation
+	}	
+	/* other implementation not shown */
+} 
+
+public class OperaSinger extends Singer 
+{
+	@Override 
+	public void sing()
+	{
+		//implementation
+	}
+	/* other implementation not shown */
+}
+</code>
+</pre>
+<p>In this example, the class OperaSinger which extends Singer overrides Singer's sing method. It provides a different implemntation for sing() to suit the OperaSinger's needs.
+<h3>Abstract Classes and Interfaces</h3>
+<p>
+Both abstract classes and interfaces define methods that must be implemented in other classes that extend/implement them. At least one defined method in abstract classes must be abstract and all defined methods in interfaces must be abstract. The public abstract keywords in interfaces are assumed so we do not type them. Abstract classes are declared by using the keyword abstract before the keyword class. Interfaces are declared by using the keyword interface instead of the keyword class. A class can extend one abstract class and implement many interfaces. In an abstract class, methods can have implementations and in an interface, methods can only be defined. Both abstract classes and interfaces cannot be instantiated. Abstract classes can have constructors and instance variables while interfaces cannot. You would use an abstract class if a class has an Is-A relationship with the class because abstract classes are extended and an interface when the other class has a Has-A relationship with the class because interfaces are implemented.  
+</p>
+<p><pre>
+<code>
+Example: 
+public abstract class Animal //Abstract Animal class 
+{
+	public void eat() //eat method 
+	{
+//implementation
+}
+	public void sleep() //sleep method 
+	{
+//implementation
+} 
+public abstract String makeSound; //defined abstract method
+}
+public class Cat extends Animal //Cat class extends Animal 
+{
+	public String makeSound ()
+	{
+		return “Meow”;
+}
+//implementation
+}  
+</code>
+</pre>
+<p>
+In this example, the abstract class Animal provides methods that all animals do and provides an abstract method that must be implemented by each Animal (makeSound). Each animal will make a different sound and will provide the correct implementation. 
+</p>
+<p><pre>
+<code>
+public interface Interactable //Interactable interface 
+{
+	String talk();
+	void pet(); 
+	void play();
+	void dance();
+}
+public class Dog implements Interactable //Dog class implements Interactable 
+{
+	public String talk ()
+	{
+		//implementation
+}
+	public void pet ()
+	{
+		//implementation
+}
+	public void play ()
+	{
+		//implementation
+}
+	public void dance ()
+	{
+		//implementation
+}
+}
+</code>
+</pre><p>
+<p>
+In this example, the Interactable interface provides abstract methods that all Interactable classes must use. The Dog class, which implements Interactable, must define all of these methods. 
+</p>
+<h3>Casting</h3>
+<p>Casting is when we change one data type to another.</p>
+<h4>Primitive Data Type Casting</h4>
+<p>Primitive data type casting is when we convert a value of a primitive data type to a different primitive data type. We would need to type in the data type that we want to convert to inside brackets, before the value. 
+</p>
+<p><pre>
+<code>
+Example: 
+double num = (double) 3; 
+</code>
+This would cast 3 into num as 3.0 (a double). 
+</pre><p>
+<p>Promoting is a type of PDT casting where you convert a lesser data type to a better data type with more storage. 
+A pro of PDT casting is that it is a quick, efficient way to change data types to suit our needs. A con of PDT casting is that only certain data types can be cast into other certain data types. Some combinations will not work and will produce an error, such as converting an int to a boolean. Another con of PDT casting is that if we cast a value of a greater data type to a lesser data type, we may lose information in the process. For example, casting a double value to an integer value would round the value down to the nearest integer. We should be careful if the cast will cause information to be lost, because most of the time we want to keep our original value to retain accuracy of information. 
+</p>
+<h4>Class Casting</h4>
+<p>Class casting is when we cast a class to another class (we label it as another class). Class casting could throw a ClassCastException if not done properly. For example, we cannot cast between subclasses. We can only cast between a subclass and a superclass. We would do this by typing the class we want to cast to in brackets.
+</p>
+<p><pre>
+<code>
+Example: 
+//precondition: apple is a subclass of fruit 	
+Fruit a = (Fruit) new Apple (); //upcasting 
+</code>
+</pre><p>
+<p>There are 2 types of class casting: upcasting and downcasting. Upcasting is casting from a subclass to a superclass. This is done automatically and we do not need to code it manually. This is because all subclasses are objects of the superclass. An apple is a fruit. We can do this by labelling a subclass object as a superclass object. However, downcasting is different because not all objects of the superclass are a specific subclass. A fruit is not necessarily an apple. We would need to code it manually. We must make a subclass object with a subclass constructor then cast it to the superclass and label it as a superclass object. Then, we can downcast it by making a new subclass object, casting the object to a subclass, and assigning it to that object. This way, it is ensured that the object is a subclass object (the fruit is really an apple and not a pear). 
+</p>
+<p><pre>
+<code>
+Example: 
+//precondition: apple is a subclass of fruit 
+Fruit a = (Fruit) new Apple (); //upcasting 
+Apple b = (Apple)a; //downcasting 
+</code>
+</pre><p>
+<h3>Don't Fear the OOP!</h3>
+<p>
+Shown below is a group assignment from this course that explains object-oriented programming with examples.
+<embed src="Don'tFearTheOop.pdf" width="800px" height="2100px" />
+</p>
+</div>
+</body>
+</html>
