@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Sophia's Portfolio: Unit 2 (Arrays and Array Lists) </title>
+<style>
+body 
+{
+  background-image: url("rainforest.jpg");
+}
+h1 
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 450%;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+h3
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 125%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+h4
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+div 
+{
+  width: 1165px;
+  border: 5px solid white;
+  border-color : #145A32;
+  padding: 25px;
+  margin: 20px;
+  background-color:#1D8348;
+}
+p
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+pre
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+.button 
+{
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 18.5px;
+	text-decoration: none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.button:hover 
+{
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.button:active 
+{
+	position:relative;
+	top:1px;
+}
+box 
+{
+  width: 600px;
+  background-color:#D1F2EB;
+  margin: 20px;
+}
+table, th, td {
+  border: 1px solid white;
+}
+
+</style>
+</head>
+<body>
+<h1>Unit 2: Arrays and Array Lists</h1>
+<box>
+<a href="index.htm" class="button">Homepage</a>
+<a href="AboutMe.htm" class="button">About Me</a>
+<a href="OOP.htm" class="button">Unit 1: OOP (Part 1)</a>
+<a href="Arrays.htm" class="button">Unit 2: Arrays and ArrayLists</a>
+<a href="SortingSearching.htm" class="button">Unit 3: Sorting and Searching</a>
+<a href="Recursion.htm" class="button">Unit 4: Recursion</a>
+</box>
+<box>
+<a href="OOP2.htm" class="button">Unit 5: OOP (Part 2)</a>
+<a href="PastProjects.htm" class="button">Past Projects</a>
+<a href="FutureProjects.htm" class="button">Future Projects</a>
+<a href="Bibliography.htm" class="button">Bibliography</a>
+</box>
+<div>
+<h3>What Are Arrays?</h3>
+<p>Arrays are collections of objects or values of like data types under the same name. The data type of the array could be any primitive data type or an abstract data type, including Strings and classes. Each element (value) in the array is identified by an index that starts at 0 and goes up to the length of the array minus 1. We can access or change any of the values by typing the array name followed by the index in square brackets. If we try to access an index past the array length - 1, it will throw an ArrayIndexOutOfBoundsException error. 
+</p>
+<img src="array.jpg" alt="Array">
+<h3>Declaring an Array</h3>
+<p>To declare an array, we must use the format:</p><p>
+<pre>
+<code>dataType[] nameOfArray = new dataType[numberOfElements];</code></pre></p>
+<p>We can then initialize the values by accessing the indices of the array and setting values to each of them. 
+</p>
+<pre>
+<code>
+Example: 
+//this creates an array of integers that holds 3 spots 
+int[] arr = new int[3];
+//this initializes its values
+arr[0] = 5; 
+arr[1] = 6; 
+arr[2] = 10; 
+</code>
+</pre>
+</p>
+<h3>Initializing an Array </h3>
+<p>If you know the values that you want to put in the array, you can initialize them right away when you declare the array. </p>
+<pre>
+<code>
+Example: 
+String[] arr = {“apple”, “pear”, “bread”};
+</code>
+</pre>
+<h3>Traversing an Array </h3>
+<p>We can traverse (run through all the values) an array by using a loop.
+</p>
+<pre>
+<code>
+Example: 
+//creates an array 
+int[] arr = {5,10,8,6,12};
+//counter variable 
+int counter = 0;
+//for loop traverses array 
+for (int i = 0; i < arr.length; i++)
+{
+	//counter adds values of each element of the array
+	counter += arr[i]; 
+}
+System.out.println (counter);  //prints out 41 
+</code>
+</pre>
+<h3>What Is a Two Dimensional Array?
+</h3>
+<p>Two dimensional arrays are when there are arrays within arrays. We can visualize 2D arrays with a table of rows and columns of values. 
+</p>
+<h3>Declaring a Two Dimensional Array </h3>
+<p>We can declare a 2D array using this format: 
+</p>
+<pre>
+<code>dataType[][] nameOfArray = new dataType[rows][columns];
+</code>
+</pre>
+<code>
+<pre>
+Example: 
+//declaring a 2D array 
+int[][] arr = new int[3][3]; 
+arr[0][0] = 1; 
+arr[0][1] = 2;
+arr[0][2] = 3; 
+arr[1][0] = 4; 
+arr[1][1] = 5; 
+arr[1][2] = 6;
+arr[2][0] = 7;
+arr[2][1] = 8;
+arr[2][2] = 9;
+</code>
+</pre>
+<pre>
+In table format it would look like this: 
+1   2   3 
+4   5   6
+7   8   9
+</pre>
+<p>The first index in a 2D array refers to the row number and the second index refers to the column number within the row number. 
+</p><p>
+2D arrays can also be ragged, which means that each row has a different number of columns. 
+</p>
+<pre>
+<code>
+Example: 
+int[][] arr2 = {{1,2,3},{4,5,6,7},{7,8}};
+</pre></code>
+<pre>
+In table format it would look like this: 
+1   2   3 
+4   5   6   7
+7   8  
+</pre>
+<h3>Initializing a Two Dimensional Array </h3>
+<p>We can initialize a 2D array as soon as we declare it using this format: 
+</p>
+<pre><code>dataType[][] name = {{values},{values},{values}};
+</pre></code>
+<p>You can adjust the number of values within each row and the number of rows.  
+</p>
+<pre><code>
+Example: 
+//declaring and initializing a 2D array 
+int[][] arr = {{2,3,5},{6,1,2},{5,2,4}};
+</pre></code>
+<pre>
+In table format it would look like this: 
+2  3  5 
+6  1  2 
+5  2  4
+</pre>
+<h3>Traversing a 2D Array</h3>
+<p>We can run through all the values of a 2D array (also referred to as a matrix) using 2 for loops (one nested in the other).
+</p>
+<pre><code>
+Example: 
+//declares and initializes 2D array 
+int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};
+//counter variable 
+int counter = 0; 
+//for loop 
+for (int i = 0; i < arr.length; i++)
+{
+	//nested for loop 
+	for (int x = 0; x < arr[i].length; x++)
+	{
+		//counter adds values in each element of the matrix  
+		counter+= arr[i][x];
+}
+}
+System.out.println (counter); //prints out 45
+</pre>
+</code>
+<h3>Array length vs String length()
+</h3>
+<p>An array’s length is a final constant field that stores the number of elements it has. We can access it by typing the name of the array followed by dot notation and the word length (no brackets because it is not a method). This is not to be confused with a string’s length() method, which returns the number of characters a string has. In a 2D array, the array’s length is the length of the first dimension array (the number of rows). To access the second dimension’s length, we can identify each row’s index followed by dot notation and length. 
+</p>
+<pre><code>
+Example:
+String s = “hello”;
+System.out.println (s.length()); //prints out 5 
+int[] arr = {1,2,3};
+System.out.println (arr.length); //prints out 3 
+int[][] arr2 = {{1,2,3,4},{4,5,6,7},{7,8,9,10}};
+System.out.println (arr2.length); //prints out 3 
+System.out.println (arr2[0].length); //prints out 4  
+</pre></code>
+<h3>Advantages of Arrays
+</h3>
+<p>Arrays are very useful and efficient for storing values. It is much more convenient and better to use arrays instead of primitive data types. If we want to store a collection of values that are all related, it would be terribly tedious and inefficient to store them in primitive data types instead of arrays. It is convenient to keep all of the data under one name and arrays make it easy to access and change all of the values (by traversing the array). It also saves memory to use arrays rather than primitive data types. 
+</p>
+<h3>What are ArrayLists? </h3>
+<p>Arraylists are special types of arrays that implements the List interface. 
+We can construct an array list with the format: 
+</p><pre><code>
+ArrayList &#60;dataType&#62; name = new ArrayList &#60;dataType&#62; ();
+</pre></code>
+<p>Arraylists come with a variety of methods to access and change the values. 
+</p>
+<pre>
+<ul>
+<li>boolean add(Object x)              ->   	adds the object to the first available slot and returns whether it was successful      
+<li>void add (int index, Object x)   ->  	adds the object to the specified index
+<li>int size() 	    		              ->	    	returns the number of objects in the list 
+<li>Object get(int index)  	        ->       returns the object at the specified index 		    
+<li>Object remove(int index) 	        ->	 	removes the object at the specified index and returns it 
+<li>Object set(int index, Object x)   ->	replaces the object at the specified index with the object x (returns first object) 
+</ul>
+</pre>
+<pre>
+<code>
+Example: 
+//makes a new ArrayList of Strings
+ArrayList <String> arr = new ArrayList <String> ();
+arr.add (“hello”); //adds “hello” 
+arr.add (“banana”); //adds “banana”
+arr.add (“marker”); //adds “marker”
+arr.get (2); //returns “marker”
+arr.size(); //returns 3 
+arr.add(1, “red”); //adds “red” between hello and banana
+arr.set (1, “blue”); //replaces “red” with “blue”
+arr.remove (1); //removes “blue” 
+</code>
+</pre>
+<h3>Autoboxing and Autounboxing </h3>
+<p>
+ArrayLists deal with object data types, not primitive data types. However, it can still hold integers, doubles, booleans, e.t.c. by using their respective wrapper classes (Integer, Double, Boolean. e.t.c.). Autoboxing is when the ArrayList changes a primitive data type to its respective wrapper class to use it, and autounboxing is when the ArrayList changes the wrapper class value to its respective primitive data type to use or display it elsewhere.  
+</p>
+</div>
+</body>
+</html>

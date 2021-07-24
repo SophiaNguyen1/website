@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Sophia's Portfolio: Unit 4 (Recursion) </title>
+<style>
+body 
+{
+  background-image: url("rainforest.jpg");
+}
+h1 
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 450%;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+h3
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 125%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+h4
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+div 
+{
+  width: 1165px;
+  border: 5px solid white;
+  border-color : #145A32;
+  padding: 25px;
+  margin: 20px;
+  background-color:#1D8348;
+}
+p
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+pre
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 100%;
+  color: white;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+.button 
+{
+	background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+	background-color:#b8e356;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 18.5px;
+	text-decoration: none;
+	text-shadow:0px 1px 0px #86ae47;
+}
+.button:hover 
+{
+	background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+	background-color:#a5cc52;
+}
+.button:active 
+{
+	position:relative;
+	top:1px;
+}
+box 
+{
+  width: 600px;
+  background-color:#D1F2EB;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Unit 4: Recursion</h1>
+<box>
+<a href="index.htm" class="button">Homepage</a>
+<a href="AboutMe.htm" class="button">About Me</a>
+<a href="OOP.htm" class="button">Unit 1: OOP (Part 1)</a>
+<a href="Arrays.htm" class="button">Unit 2: Arrays and ArrayLists</a>
+<a href="SortingSearching.htm" class="button">Unit 3: Sorting and Searching</a>
+<a href="Recursion.htm" class="button">Unit 4: Recursion</a>
+</box>
+<box>
+<a href="OOP2.htm" class="button">Unit 5: OOP (Part 2)</a>
+<a href="PastProjects.htm" class="button">Past Projects</a>
+<a href="FutureProjects.htm" class="button">Future Projects</a>
+<a href="Bibliography.htm" class="button">Bibliography</a>
+</box>
+<div>
+<h3>What Is Recursion?</h3>
+<p>Recursion is when a method keeps calling itself over and over until a specific requirement is met, due to changes in data as the method runs. Recursive methods must be able to meet the requirement and stop the recursive process eventually. Recursive methods usually use parameter passing to pass on values instead of variables, since variables would reset with each recursive call. A base case is the condition that ends the recursive loop. It then backtracks and solves each of the method calls, leading to the solution.     
+</p>
+<pre>
+<code>
+Example: 
+/*In this recursive method, it will keep calling itself until the number reaches 0, then returns 0*/ 
+public int recurse (int num)
+{
+	//base case 
+	if (num <= 0)
+		return 0; 
+	//recursive call 
+	return recurse (num-1);
+}
+
+
+
+Example: 
+/*This method will find the power by repeatedly multiplying the base with the power decreasing until 0*/
+public double power (int base, int pow)
+{
+        //base case that solves the problem 
+        if (pow == 0)
+                return 1;
+       //if power is negative 
+        else if (pow < 0)
+	    //recursive call 
+                return 1.0/base * power (base, pow + 1);
+        //recursive call 
+        return base * power (base, pow - 1);
+}
+
+</code>
+</pre>
+<h3>Types of Recursion</h3>
+<p>Mutual recursion is a type of recursion where two methods call each other (the first method calls the second method, the second method calls the first method, and the process repeats) until the specific requirement is met. 
+</p>
+<pre>
+<code>
+Example: 
+public class Recursion
+{ 
+public int mystery(int num) 
+{	
+	//base case 
+	if (num <= 0)
+		return 0; 
+	//mutual recursive call to mystery2 
+return num * mystery2(num - 1);
+}	
+public int mystery2(int number) 
+{
+	//base case
+	if (number <= 0)
+		return 0;
+	//mutual recursive call to mystery 
+	return number + mystery(number-1);
+}
+public static void main (String[]args)
+{
+	Recursion r = new Recursion(); 
+	System.out.println (r.mystery(5));
+}
+}
+</code>
+</pre>
+<p>Tail recursion is a type of recursion where the method performs calculations first, then calls itself using a return statement at the very end of the method (the last line of code).
+</p>
+<pre>
+<code>
+Example: 
+/*This method reverses a string by each word*/
+public String reverse(String str)
+{
+	//base case 
+ 	if (str.substring(0,str.indexOf(' ')).equals ("."))
+   	 return str;
+	//tail recursion  
+	return reverse(str.substring(str.indexOf (' ')+1)) + "\n" + (str.substring(0,str.indexOf (' ')));
+}
+</code>
+</pre>
+
+<h3>Tracing Recursion </h3>
+<p>It is a good idea to trace recursive methods to understand how it works and to figure out what it would output if we inputted a certain value. 
+</p>
+<pre>
+<code>
+Example: 
+public int fibonacci (int num)
+{
+	if (num <= 1)
+		return 1; 
+	return fibonacci(num - 1) + fibonacci(num - 2); 
+}
+</code>
+Trace: 
+fibonacci(5) -> fibonacci(4) + fibonacci(3) = 8
+fibonacci(4) -> fibonacci(3) + fibonacci(2) = 5 
+fibonacci(3) -> fibonacci(2) + fibonacci(1) = 3 
+fibonacci(2) -> fibonacci(1) + fibonacci(0) = 2 
+fibonacci(1) -> 1
+fibonacci(0) -> 1
+</pre>
+<p>We can also trace recursive methods using a recursive tree to visualize the recursive calls.</p>
+<img src="fibonacci.png" alt="Fibonacci Recursive Tree"> 
+<p>When I solve recursion problems, I like to use the regular tracing method to find what values will be outputted and to see the order in which the recursive calls will be made. I like to use recursive trees when I want to find the number of recursive calls that an input value will have.</p> 
+<h3>Pros and Cons of Recursion </h3>
+<p>Problems can be solved recursively or iteratively (with loops).  
+</p>
+<p>Recursion is a great way to solve many problems. Recursive solutions are simpler to code, model problems well, and are easier to understand.   
+</p>
+<p>The negative aspect with recursion is that it takes up a lot of memory and time. Recursive methods require creating new copies of the method with its variables over and over again, which grows large in memory very quickly. It also takes a lot of time because creating/allocating memory for each method call, passing parameters, making variables, e.t.c. takes up a lot of time. Iterative solutions generally have lower time complexities and space complexities than recursive solutions.  
+</p>
+</div>
+</body>
+</html>
